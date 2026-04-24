@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>After Effects Workshop</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      background: linear-gradient(135deg, #090979, #4b0082, #00b4ff);
+      overflow-x: hidden;
+    }
+
+    .form-container{
+      width: 430px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(15px);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+    }
+
+    /* TOP IMAGE */
+
+    .top-image{
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .content{
+      padding: 30px;
+    }
+
+    h2{
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .subtitle{
+      text-align: center;
+      color: #dcdcdc;
+      font-size: 14px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    label{
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 15px;
+      color: #ffffff;
+    }
+
+    input{
+      width: 100%;
+      padding: 16px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      color: white;
+      outline: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    input::placeholder{
+      color: #d6d6d6;
+    }
+
+    input:focus{
+      border: 1px solid #00b4ff;
+      background: rgba(255,255,255,0.18);
+      box-shadow: 0 0 10px rgba(0,180,255,0.5);
+    }
+
+    .payment-box{
+      margin-top: 12px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .payment-option{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    .payment-option input{
+      width: auto;
+      accent-color: #00b4ff;
+    }
+
+    button{
+      width: 100%;
+      margin-top: 30px;
+      padding: 16px;
+      border: none;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #00b4ff, #7b2cff);
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="form-container">
+
+    <!-- TOP IMAGE -->
+    <img src="after effect.webp" alt="After Effects Banner" class="top-image">
+
+    <div class="content">
+
+      <h2>After Effects Workshop</h2>
+
+      <p class="subtitle">
+        Join our creative workshop and improve your motion design and video editing skills.
+      </p>
+
+      <form>
+
+        <label>Full Name</label>
+        <input 
+          type="text" 
+          placeholder="Write your name"
+          required
+        >
+
+        <label>Email Address</label>
+        <input 
+          type="email" 
+          placeholder="Write your email"
+          required
+        >
+
+        <label>Phone Number</label>
+        <input 
+          type="tel" 
+          placeholder="Write your phone number"
+          required
+        >
+
+        <label>Grade</label>
+        <input 
+          type="text" 
+          placeholder="Write your grade"
+          required
+        >
+
+        <label>Payment Method</label>
+
+        <div class="payment-box">
+
+          <div class="payment-option">
+            <input type="radio" name="payment" required>
+            <span>D17 (******* )</span>
+          </div>
+
+          <div class="payment-option">
+            <input type="radio" name="payment">
+            <span>Cash</span>
+          </div>
+
+        </div>
+
+        <button type="submit">
+          Register Now
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
