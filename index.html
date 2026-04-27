@@ -35,8 +35,6 @@
       color: white;
     }
 
-    /* TOP IMAGE */
-
     .top-image{
       width: 100%;
       height: 180px;
@@ -145,39 +143,43 @@
 
     <div class="content">
 
-      <h2>After Effects Workshop & adobe premiere pro </h2>
+      <h2>After Effects Workshop & Adobe Premiere Pro</h2>
 
       <p class="subtitle">
         2 in one<br> 
         Join our creative workshop and improve your motion design and video editing skills.
       </p>
 
-     <form action="https://formspree.io/f/xeevnpzd" method="POST">
+      <form action="https://formspree.io/f/xeevnpzd" method="POST">
 
         <label>Full Name</label>
         <input 
-          type="text" 
+          type="text"
+          name="full_name"
           placeholder="Write your name"
           required
         >
 
         <label>Email Address</label>
         <input 
-          type="email" 
+          type="email"
+          name="email"
           placeholder="Write your email"
           required
         >
 
         <label>Phone Number</label>
         <input 
-          type="tel" 
+          type="tel"
+          name="phone_number"
           placeholder="Write your phone number"
           required
         >
 
         <label>Grade</label>
         <input 
-          type="text" 
+          type="text"
+          name="grade"
           placeholder="Write your grade"
           required
         >
@@ -187,12 +189,12 @@
         <div class="payment-box">
 
           <div class="payment-option">
-            <input type="radio" name="payment" required>
+            <input type="radio" name="payment" value="D17" required>
             <span>D17 (******* )</span>
           </div>
 
           <div class="payment-option">
-            <input type="radio" name="payment">
+            <input type="radio" name="payment" value="Cash">
             <span>Cash</span>
           </div>
 
