@@ -48,7 +48,7 @@
 
     h2{
       text-align: center;
-      font-size: 32px;
+      font-size: 30px;
       margin-bottom: 10px;
       color: #ffffff;
     }
@@ -57,8 +57,47 @@
       text-align: center;
       color: #dcdcdc;
       font-size: 14px;
-      margin-bottom: 30px;
-      line-height: 1.5;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    /* IMPORTANT INFO BOX */
+
+    .alert-box{
+      background: rgba(255,255,255,0.12);
+      border: 2px solid #00b4ff;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 25px;
+      animation: glow 2s infinite alternate;
+    }
+
+    .alert-box h3{
+      text-align: center;
+      margin-bottom: 15px;
+      color: #ffffff;
+      font-size: 20px;
+    }
+
+    .alert-box p{
+      line-height: 1.8;
+      font-size: 14px;
+      color: #f2f2f2;
+    }
+
+    .big-info{
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    @keyframes glow{
+      from{
+        box-shadow: 0 0 10px rgba(0,180,255,0.3);
+      }
+      to{
+        box-shadow: 0 0 25px rgba(123,44,255,0.8);
+      }
     }
 
     label{
@@ -92,14 +131,14 @@
       box-shadow: 0 0 10px rgba(0,180,255,0.5);
     }
 
-    .payment-box{
-      margin-top: 12px;
+    .option-box{
+      margin-top: 10px;
       padding: 18px;
       border-radius: 18px;
       background: rgba(255,255,255,0.08);
     }
 
-    .payment-option{
+    .option{
       display: flex;
       align-items: center;
       gap: 10px;
@@ -107,9 +146,33 @@
       font-size: 15px;
     }
 
-    .payment-option input{
+    .option input{
       width: auto;
       accent-color: #00b4ff;
+    }
+
+    .price-display{
+      margin-top: 15px;
+      padding: 14px;
+      border-radius: 15px;
+      background: rgba(0,180,255,0.15);
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .warning-box{
+      margin-top: 15px;
+      padding: 14px;
+      border-radius: 15px;
+      background: rgba(255, 166, 0, 0.2);
+      border: 1px solid orange;
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+      color: #fff;
+      display: none;
     }
 
     button{
@@ -138,7 +201,6 @@
 
   <div class="form-container">
 
-    <!-- TOP IMAGE -->
     <img src="A7A.webp" alt="After Effects Banner" class="top-image">
 
     <div class="content">
@@ -146,9 +208,33 @@
       <h2>After Effects Workshop & Adobe Premiere Pro</h2>
 
       <p class="subtitle">
-        2 in one<br> 
+        2 in 1 Workshop <br>
         Join our creative workshop and improve your motion design and video editing skills.
       </p>
+
+      <!-- ATTENTION SECTION -->
+
+      <div class="alert-box">
+
+        <h3>⚡ Important Information ⚡</h3>
+
+        <p>
+
+          <span class="big-info">📍 AT ISTIC</span><br><br>
+
+          <span class="big-info">⏰ CHECK-IN: 8:30 AM</span><br>
+          <span class="big-info">🏁 ENDS AT: 3:30 PM</span><br><br>
+
+          <span class="big-info">🎬 TWO SESSIONS DIVIDED</span><br>
+          • 1st Session: Premiere Pro <br>
+          • 2nd Session: After Effects <br><br>
+
+          💻 Make sure to bring your PC & multiprise.<br>
+          🎉 Let's have fun!
+
+        </p>
+
+      </div>
 
       <form action="https://formspree.io/f/xeevnpzd" method="POST">
 
@@ -184,18 +270,67 @@
           required
         >
 
-        <label>Payment Method</label>
+        <!-- PARTICIPANT TYPE -->
 
-        <div class="payment-box">
+        <label>Participant Type</label>
 
-          <div class="payment-option">
-            <input type="radio" name="payment" value="D17" required>
-            <span>D17 (******* )</span>
+        <div class="option-box">
+
+          <div class="option">
+            <input type="radio" name="participant"
+            value="Universe Member - 6DT"
+            onclick="updatePrice(6)" required>
+            <span>Universe Member</span>
           </div>
 
-          <div class="payment-option">
+          <div class="option">
+            <input type="radio" name="participant"
+            value="Radio Member - 6DT"
+            onclick="updatePrice(6)">
+            <span>Radio Member</span>
+          </div>
+
+          <div class="option">
+            <input type="radio" name="participant"
+            value="ISTIC Student - 8DT"
+            onclick="updatePrice(8)">
+            <span>ISTIC Student</span>
+          </div>
+
+          <div class="option">
+            <input type="radio" name="participant"
+            value="External Participant - 10DT (+1DT transfer fee)"
+            onclick="updatePrice(10)">
+            <span>External Participant</span>
+          </div>
+
+          <div class="price-display" id="priceBox">
+            Select your participant type to see the price
+          </div>
+
+        </div>
+
+        <!-- PAYMENT -->
+
+        <label>Payment Method</label>
+
+        <div class="option-box">
+
+          <div class="option">
+            <input type="radio" name="payment" value="D17" required>
+            <span>D17(54394658)</span>
+          </div>
+
+          <div class="option">
             <input type="radio" name="payment" value="Cash">
             <span>Cash</span>
+          </div>
+
+          <!-- WARNING MESSAGE -->
+
+          <div class="warning-box" id="transferNote">
+            ⚠️ For D17 payments on the External Participant option,
+            please add +1DT transfer fee.
           </div>
 
         </div>
@@ -209,6 +344,44 @@
     </div>
 
   </div>
+
+  <script>
+
+    let selectedPrice = 0;
+
+    function updatePrice(price){
+
+      selectedPrice = price;
+
+      document.getElementById("priceBox").innerHTML =
+      "💰 Price: " + price + " DT";
+
+      checkTransferFee();
+    }
+
+    function checkTransferFee(){
+
+      const d17 = document.querySelector('input[name="payment"][value="D17"]');
+      const note = document.getElementById("transferNote");
+
+      if(d17.checked && selectedPrice === 10){
+
+        note.style.display = "block";
+
+      } else {
+
+        note.style.display = "none";
+
+      }
+    }
+
+    document.querySelectorAll('input[name="payment"]').forEach((radio)=>{
+
+      radio.addEventListener("change", checkTransferFee);
+
+    });
+
+  </script>
 
 </body>
 </html>
